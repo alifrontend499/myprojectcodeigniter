@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  /* font-family: calibri; */
+  /* background: #d3d3d3; */
+}
+
+
+
+.login-outer {
+  border: 1px solid #555;
+  /* background: #555; */
+  background: #2c3e50;
+  height: auto;
+  width: 500px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 10px 10px 20px #000;
+  border-radius: 5px;
+}
+.login-inner {
+  padding: 10px 15px 17px;
+}
+label {
+  color: #fff;
+  margin-bottom: 5px;
+  display: block;
+}
+input {
+  display: block;
+  margin-bottom: 10px;
+
+  height: 40px;
+  width: 100%;
+  padding: 0 10px;
+}
+button {
+  height: 40px;
+  width: 100%;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  background: #000;
+  color: #fff;
+  border: 2px solid #fff;
+  cursor: pointer;
+  -ms-transition: .3s;
+  transition: .3s;
+  margin-top: 10px;
+}
+button:hover {
+  background: #fff;
+  color: #000;
+}
+
+.head {
+  text-align: center;
+  /* background: #454545; */
+  background: #1c2e40;
+  border-radius: 5px 5px 0px 0px;
+  padding: 9px 0;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  border-bottom: 1px solid #cfcfcf;
+  margin: 0 0 0 -1px;
+  width: calc(100% + 2px);
+}
+
+
+.newa {
+  color: #fff;
+  text-align: right;
+  display: block;
+  width: 280px;
+  margin-left: calc(100% - 280px);
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
+.dashboard {
+  padding: 0;
+}
+.dashboard ul {
+  margin: 0;
+  padding: 0 20px;
+  list-style-type: none;
+  background: #232323;
+  color: #fff;
+}
+.dashboard ul > li {
+  display: inline-block;
+  margin-right: -4px;
+  width: 50%;
+}
+.dashboard ul > li:first-child {
+  text-align: left;
+}
+.dashboard ul > li:last-child {
+  text-align: right;
+}
+.dashboard ul > li > a {
+  color: #fff;
+}
+
+.dashboard-inner {
+  padding: 0 50px;
+}
+.dashboard-inner h1 {
+  font-size: 60px;
+  color: #333;
+}
+.dashboard-inner h1 span {
+  display: block;
+  font-size: 30px;
+  color: #000;
+}
+
+.error_div {
+  color: red;
+}
+.error_div p {
+  margin: 0 0 5px;
+}
+
+.alert > p:last-child {
+  margin-bottom: 0;
+}
+.deleteUser {
+  cursor: pointer;
+}
