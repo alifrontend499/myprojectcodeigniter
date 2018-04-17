@@ -24,15 +24,21 @@
             echo "<div class='alert alert-success text-center'>" . $already_exist . "</div>";
           }
         ?>
-        <!-- <form class="" action="action.php" method="post"> -->
         <?php echo form_open('signup/user_signup', ["class" => "signup-form"]) ?>
           <div class="form-group">
             <label>Name</label>
             <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
           </div>
+
           <div class="form-group">
             <label>Email</label>
             <?php echo form_input(["name" => "email", "type"=> "email", "class" => "form-input", "placeholder" => "Email", "value"=> set_value('email')]) ?>
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <!-- <input type="text" name="name" value="" required> -->
+            <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
           </div>
 
           <a href="login" class="newa">already have an account? click to Login</a>

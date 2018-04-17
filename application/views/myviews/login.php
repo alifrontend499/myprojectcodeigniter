@@ -35,14 +35,19 @@
         ?>
         <!-- erro_msgs finish-->
         <?php echo form_open('login/user_login', ["class" => "login-form"]); ?>
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label>Name</label>
-            <!-- <input type="text" name="name" value="" required> -->
-            <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
-          </div>
+            <?php //echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
+          </div> -->
+
           <div class="form-group">
             <label>Email</label>
             <?php echo form_input(["name" => "email", "type"=> "email", "class" => "form-input", "placeholder" => "Email", "value"=> set_value('email')]) ?>
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
           </div>
 
           <a href="<?php echo base_url(); ?>signup" class="newa">Dont have an account? click to Signup</a>
