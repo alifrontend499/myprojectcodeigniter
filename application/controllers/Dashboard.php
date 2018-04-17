@@ -36,13 +36,17 @@ class Dashboard extends CI_Controller
         if($user_check) {
           // session_destroy();
           $this->session->unset_userdata(["name", "email"]);
-          
+
           $this->session->set_flashdata("userDeleted", "You have been deleted from our database :( see you soon.");
           redirect("login");
         }
       } else {
         redirect("dashboard");
       }
+  }
 
+  public function changeusername()
+  {
+    echo "string";
   }
 }

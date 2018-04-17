@@ -136,3 +136,25 @@ button:hover {
 .deleteUser {
   cursor: pointer;
 }
+
+
+.dropdown:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  top: 96% !important;
+  left: initial !important;
+  right: 0;
+  float: none !important;
+}
+.dropdown-menu > li > a {
+  padding: 5px 10px;
+  width: 100%;
+  display: block;
+  color: #333 !important;
+  font-size: 14px;
+}
+.dropdown-menu > li a:hover {
+  background: #ededed;
+}
