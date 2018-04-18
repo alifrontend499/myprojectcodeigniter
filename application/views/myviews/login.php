@@ -41,17 +41,17 @@
           </div> -->
 
           <div class="form-group">
-            <label>Email</label>
-            <?php echo form_input(["name" => "email", "type"=> "email", "class" => "form-input", "placeholder" => "Email", "value"=> set_value('email')]) ?>
+            <label>Email or Username</label>
+            <?php echo form_input(["name" => "email", "type"=> "email", "class" => "form-input", "placeholder" => "Email or Username", "value"=> set_value('email')]) ?>
           </div>
 
           <div class="form-group">
             <label>Password</label>
-            <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
+            <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Password", "value"=> set_value('name')]) ?>
           </div>
 
           <a href="<?php echo base_url(); ?>signup" class="newa">Dont have an account? click to Signup</a>
-          <button type="submit" name="submit" class="btn btn-secondry">Submit</button>
+          <button type="submit" name="submit" class="btn btn-secondry text-uppercase">Submit</button>
         </form>
       </div>
     </div>

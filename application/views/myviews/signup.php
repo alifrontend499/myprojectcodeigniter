@@ -10,10 +10,6 @@
     <div class="login-outer">
       <h1 class="head">Sign up</h1>
       <div class="login-inner">
-        <div class="error_div" style="color: red;">
-          <?php echo validation_errors(); ?>
-        </div>
-
         <?php
           $validations_errors = validation_errors();
           $already_exist = $this->session->flashdata("already_exist");
@@ -38,11 +34,17 @@
           <div class="form-group">
             <label>Password</label>
             <!-- <input type="text" name="name" value="" required> -->
-            <?php echo form_input(["name" => "name", "class" => "form-input", "placeholder" => "Username", "value"=> set_value('name')]) ?>
+            <?php echo form_password(["name" => "pass", "class" => "form-input", "placeholder" => "Password"]) ?>
+          </div>
+
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <!-- <input type="text" name="name" value="" required> -->
+            <?php echo form_password(["name" => "confirm_pass", "class" => "form-input", "placeholder" => "Confrim password"]) ?>
           </div>
 
           <a href="login" class="newa">already have an account? click to Login</a>
-          <button type="submit" name="submit">Submit</button>
+          <button type="submit" name="submit" class="btn btn-secondry text-uppercase">Submit</button>
         </form>
       </div>
     </div>
