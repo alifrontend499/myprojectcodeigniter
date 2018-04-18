@@ -4,8 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class signup_model extends CI_Model
 {
 
-  public function signup($name, $email)
+  public function signup($name, $email, $password)
   {
+    $new_pass = password_hash($password, PASSWORD_BCRYPT);
 
     $query_data = $this->db->select("id, name, email")->where(["name"=> $name, "email"=> $email])->get('login_details');
 
@@ -13,7 +14,7 @@ class signup_model extends CI_Model
       return FALSE;
     } else {
       $this->db->trans_start();
-        $this->db->insert("login_details", ["name"=> $name, "email"=> $email]);
+        $this->db->insert("login_details", ["name"=> $name, "email"=> $email, "pass"=> $new_pass]);
       $this->db->trans_complete();
 
       $get_data = $this->db->select("id, name, email")->where(["name"=>$name, "email"=> $email])->limit("1")->get("login_details");

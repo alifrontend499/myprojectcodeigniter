@@ -18,18 +18,17 @@ class Login extends CI_Controller
   public function user_login() {
     $this->load->model("login_model");
 
-    $username = $this->input->post("name");
     $email = $this->input->post("email");
+    $password = $this->input->post("pass");
 
     // validations
-    $this->form_validation->set_rules("name", 'Username', "required");
-    $this->form_validation->set_rules("email", 'Email', "required");
-
+    $this->form_validation->set_rules("email", 'Email', "required|valid_email");
+    $this->form_validation->set_rules("pass", 'Password', "required");
 
     if($this->form_validation->run() == FALSE) {
       $this->load->view("myviews/login");
     } else {
-      $login_check = $this->login_model->login_check($username, $email);
+      $login_check = $this->login_model->login_check($email, $password);
 
       if($login_check) {
 
@@ -39,7 +38,7 @@ class Login extends CI_Controller
 
       } else {
         // $this->session->set_userdata("not_found", "Please enter right username and email or Signup");
-        $this->session->set_flashdata("not_found", "No record found plese signup if you don't have an account.");
+        $this->session->set_flashdata("not_found", "Your username or password is incorrect");
         redirect("login");;
       }
     }
