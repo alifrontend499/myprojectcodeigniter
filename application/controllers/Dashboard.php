@@ -47,6 +47,8 @@ class Dashboard extends CI_Controller
 
   public function changeusername()
   {
-    echo "string";
+    // $user_id = $this->session->userdata("user_id");
+
+    $this->load->view('myviews/change-username');
   }
 }
