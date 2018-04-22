@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">
+  <a class="navbar-brand" href="<?php echo base_url(); ?>dashboard">
     Hello
     <span>
       <?php

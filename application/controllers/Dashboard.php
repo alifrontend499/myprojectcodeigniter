@@ -10,6 +10,8 @@ class Dashboard extends CI_Controller
     if(!$this->session->userdata("name")) {
       redirect("login");
     }
+
+    $this->load->model("user_model");
   }
 
   public function index()
@@ -28,7 +30,6 @@ class Dashboard extends CI_Controller
 
   public function deleteUser()
   {
-      $this->load->model("user_model");
       $user_id = $this->input->post("userId");
 
       if(isset($user_id)) {
@@ -47,8 +48,27 @@ class Dashboard extends CI_Controller
 
   public function changeusername()
   {
-    // $user_id = $this->session->userdata("user_id");
-
     $this->load->view('myviews/change-username');
+  }
+
+  public function changeusernamedata()
+  {
+    $newusername = $this->input->post("new_username");
+    $password = $this->input->post("pass");
+    $user_id = $this->session->userdata("user_id");
+
+    $this->form_validation->set_rules("new_username", 'New Username', "required");
+    $this->form_validation->set_rules("pass", 'Password', "required");
+
+    if($this->form_validation->run() == FALSE) {
+      $this->load->view('myviews/change-username');
+    } else {
+      $update_username = $this->user_model->change_username($user_id, $newusername, $password);
+      if($update_username) {
+        $this->session->set_flashdata("update_success", "Username has been updated :).");
+        redirect("dashboard/changeusername");
+      }
+    }
+
   }
 }

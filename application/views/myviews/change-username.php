@@ -14,13 +14,19 @@
         <h3 class="head">Change username</h3>
         <div class="login-inner">
         <?php
-          // $validations_errors = validation_errors();
-          // if($validations_errors) {
-          //   echo "<div class='alert alert-danger text-center'>" . $validations_errors . "</div>";
-          // }
+          $validations_errors = validation_errors();
+          $update_success = $this->session->flashdata("update_success");
+
+
+          if($validations_errors) {
+            echo "<div class='alert alert-danger text-center'>" . $validations_errors . "</div>";
+          }
+          if($update_success) {
+            echo "<div class='alert alert-success text-center'>" . $update_success . "</div>";
+          }
         ?>
         <!-- erro_msgs finish-->
-        <?php echo form_open('login/user_login', ["class" => "login-form"]); ?>
+        <?php echo form_open('dashboard/changeusernamedata', ["class" => "login-form"]); ?>
           <div class="form-group">
             <label>New username</label>
             <?php echo form_input(["name" => "new_username", "class" => "form-input", "placeholder" => "New username", "value"=> set_value('new_username')]) ?>

@@ -14,4 +14,18 @@ class User_model extends CI_Model
       return true;
     }
   }
+
+  public function change_username($user_id, $newusername, $password)
+  {
+    $getting_password = $this->db->select("pass")->where(["id"=>"$user_id"])->get("login_details");
+    $userPass = $getting_password->row()->pass;
+    $password_verify = password_verify($password, $userPass);
+
+    if($password_verify) {
+      $this->db->where(["id"=>$user_id])->update("login_details", ["name"=>$newusername]);
+      return TRUE;
+    } else {
+      return FALSE;
+    }
+  }
 }
