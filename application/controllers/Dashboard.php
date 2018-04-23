@@ -57,7 +57,7 @@ class Dashboard extends CI_Controller
     $password = $this->input->post("pass");
     $user_id = $this->session->userdata("user_id");
 
-    $this->form_validation->set_rules("new_username", 'New Username', "required");
+    $this->form_validation->set_rules("new_username", 'New Username', "required|alpha");
     $this->form_validation->set_rules("pass", 'Password', "required");
 
     if($this->form_validation->run() == FALSE) {
@@ -65,7 +65,11 @@ class Dashboard extends CI_Controller
     } else {
       $update_username = $this->user_model->change_username($user_id, $newusername, $password);
       if($update_username) {
-        $this->session->set_flashdata("update_success", "Username has been updated :).");
+        $this->session->set_userdata("name", $newusername);
+        $this->session->set_flashdata("update_success", "Username has been updated :)");
+        redirect("dashboard/changeusername");
+      } else {
+        $this->session->set_flashdata("pass_notmatched", "Password is incorrect");
         redirect("dashboard/changeusername");
       }
     }

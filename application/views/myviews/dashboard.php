@@ -28,7 +28,7 @@
         Click below to read our latest blogs.
       </p>
       <p class="lead">
-        <a class="btn btn-primary btn-lg" href="#" role="button">Blogs</a>
+        <a class="btn btn-primary btn-lg" href="#" role="button">My Blogs</a>
       </p>
     </div>
 

@@ -16,10 +16,14 @@
         <?php
           $validations_errors = validation_errors();
           $update_success = $this->session->flashdata("update_success");
+          $pass_notmatched = $this->session->flashdata("pass_notmatched");
 
 
           if($validations_errors) {
             echo "<div class='alert alert-danger text-center'>" . $validations_errors . "</div>";
+          }
+          if($pass_notmatched) {
+            echo "<div class='alert alert-danger text-center'>" . $pass_notmatched . "</div>";
           }
           if($update_success) {
             echo "<div class='alert alert-success text-center'>" . $update_success . "</div>";
