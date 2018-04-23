@@ -21,7 +21,7 @@ class Dashboard extends CI_Controller
 
   public function logout()
   {
-    $this->session->unset_userdata(["name", "email"]);
+    $this->session->unset_userdata(["name", "email", "user_id"]);
 
     $this->session->set_flashdata("userLoggerout", "You have succesfully logged out");
 

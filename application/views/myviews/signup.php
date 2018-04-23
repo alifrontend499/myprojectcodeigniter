@@ -43,7 +43,7 @@
             <?php echo form_password(["name" => "confirm_pass", "class" => "form-input", "placeholder" => "Confrim password"]) ?>
           </div>
 
-          <a href="login" class="newa">already have an account? click to Login</a>
+          <a href="<?php echo base_url(); ?>login" class="newa">already have an account? click to Login</a>
           <button type="submit" name="submit" class="btn btn-secondry text-uppercase">Submit</button>
         </form>
       </div>

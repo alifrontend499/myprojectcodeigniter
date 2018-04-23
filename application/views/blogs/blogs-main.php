@@ -3,47 +3,48 @@
   <head>
     <meta charset="utf-8">
     <title>Blogs</title>
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.css">
+    <?php include("includes/inc-css.php") ?>
   </head>
   <body>
 
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+      <?php include("includes/header.php") ?>
     </header>
+
+    <section id="blogs_sec" class="mt-5">
+      <div class="container">
+        <div class="blogs_sec-inner">
+          <h2 class="mb-3">Blogs</h2>
+          <div class="blog d-flex border border-secondary mb-3">
+            <div class="col-sm-2 pt-3 pb-3 img-sec">
+              <img src="<?php echo base_url(); ?>assets/images/blog-default-img.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-sm-10 pt-3 pb-3 text-sec">
+              <h3 class="heading">My first blog</h3>
+              <p class="text">
+                This is my first blog and i am going to get u there.This is my first blog and i am going to get u there.
+                This is my first blog and i am going to get u there.This is my first blog and i am going to get u there.
+              </p>
+              <button type="button" class="btn btn-primary col-sm-2" name="button">Read more</button>
+            </div>
+          </div>
+          <div class="blog d-flex border border-secondary">
+            <div class="col-sm-2 pt-3 pb-3 img-sec">
+              <img src="<?php echo base_url(); ?>assets/images/blog-default-img.jpg" alt="" class="img-fluid">
+            </div>
+            <div class="col-sm-10 pt-3 pb-3 text-sec">
+              <h3 class="heading">My first blog</h3>
+              <p class="text">
+                This is my first blog and i am going to get u there.This is my first blog and i am going to get u there.
+                This is my first blog and i am going to get u there.This is my first blog and i am going to get u there.
+              </p>
+              <button type="button" class="btn btn-primary col-sm-2" name="button">Read more</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
   </body>
 </html>
