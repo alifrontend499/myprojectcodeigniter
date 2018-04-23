@@ -7,7 +7,7 @@
       elem.parentNode.removeChild(elem);
     }
   }
-  setTimeout(intv, 6000)
+  setTimeout(intv, 6000);
 })();
 
 // confirm before deleting user
@@ -41,5 +41,12 @@
     setInterval(function(){
       dec(eleAttr);
     }, 100);
+  })();
+
+  // go back button
+  (function() {
+    $('.gobackbtn').click(function () {
+      window.history.back();
+    });
   })();
 })();
